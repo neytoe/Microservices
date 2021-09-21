@@ -23,7 +23,9 @@ namespace Platformservice.Repository
             {
                 throw new ArgumentNullException(nameof(plat));
             }
-            _context.Platforms.Add(plat)        }
+            _context.Platforms.Add(plat);    
+        }
+        
 
         public bool DeletePlatformById(int id)
         {
