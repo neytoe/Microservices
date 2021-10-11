@@ -3,23 +3,16 @@
 #Depending on the operating system of the host machines(s) that will build or run the containers, the image specified in the FROM statement may need to be changed.
 #For more information, please see https://aka.ms/containercompat
 
-FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build-env
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
-WORKDIR /src
-COPY ["Platformservice/Platformservice.csproj", "Platformservice/"]
-RUN dotnet restore "Platformservice/Platformservice.csproj"
-COPY . .
-WORKDIR "/src/Platformservice"
-RUN dotnet build "Platformservice.csproj" -c Release -o /app/build
+COPY *.csproj ./
+RUN dotnet restore 
 
-FROM build AS publish
-RUN dotnet publish "Platformservice.csproj" -c Release -o /app/publish
+COPY . ./
+RUN dotnet publish -c Release -o out
 
-FROM base AS final
+FROM mcr.microsoft.com/dotnet/aspnet:5.0
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "Platformservice.dll"]
