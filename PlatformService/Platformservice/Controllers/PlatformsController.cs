@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Platformservice.Dtos;
 using Platformservice.Interfaces;
 using Platformservice.Models;
+using Platformservice.SyncDataServices.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,14 +18,19 @@ namespace Platformservice.Controllers
     {
         private readonly IPlatformRepo _repository;
         private readonly IMapper _mapper;
+        private readonly ICommandDataClient _commandDataClient;
 
-        public PlatformsController(IPlatformRepo repository, IMapper mapper)
+        public PlatformsController(
+            IPlatformRepo repository,
+            IMapper mapper,
+            ICommandDataClient commandDataClient)
         {
             _repository = repository;
             _mapper = mapper;
+            _commandDataClient = commandDataClient;
         }
 
-        [HttpGet]
+        [HttpGet("GetAllPlatforms")]
         public ActionResult<IEnumerable<PlatformReadDto>> GetPlatforms()
         {
             var platforms = _repository.GetAllPlatforms();
@@ -38,7 +44,7 @@ namespace Platformservice.Controllers
            
         }
 
-        [HttpGet("{id}", Name ="GetPlatformById")]
+        [HttpGet("GetPlatformById")]
         public ActionResult<PlatformReadDto> GetPlatformById (int id)
         {
             var platform = _repository.GetPlatformById(id);
@@ -52,8 +58,8 @@ namespace Platformservice.Controllers
             return NotFound("Item doesn't exist"); 
         }
 
-        [HttpPost]
-        public ActionResult<PlatformReadDto> CreatePlatform(PlatformCreateDto model)
+        [HttpPost("CreatePlatform")]
+        public async Task<ActionResult<PlatformReadDto>> CreatePlatform(PlatformCreateDto model)
         {
             if (model != null)
             {
@@ -62,7 +68,17 @@ namespace Platformservice.Controllers
                 _repository.SaveChanges();
 
                 var result = _mapper.Map<PlatformReadDto>(platform);
-                return CreatedAtRoute(nameof(GetPlatformById), new { Id = result.Id }, result);
+
+                try
+                {
+                    await _commandDataClient.SendPlatformToCommand(result);
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine($"--> Could not send synchronously : {ex.Message}");
+                }
+                return CreatedAtAction(nameof(GetPlatformById), new { Id = result.Id }, result);
             }
 
             return BadRequest("Error Creating Platform");

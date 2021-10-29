@@ -12,6 +12,7 @@ using Platformservice.Data;
 using Platformservice.Interfaces;
 using Platformservice.Models;
 using Platformservice.Repository;
+using Platformservice.SyncDataServices.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,12 +35,14 @@ namespace Platformservice
             services.AddDbContext<AppDbContext>(opt =>
                 opt.UseInMemoryDatabase("InMem"));
             services.AddScoped<IPlatformRepo, PlatformRepo>();
+            services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
             services.AddControllers();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Platformservice", Version = "v1" });
             });
+            Console.WriteLine($"--> CommnandService Endpoint {Configuration["CommandsService"]}");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

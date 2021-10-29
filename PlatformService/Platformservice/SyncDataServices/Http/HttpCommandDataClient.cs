@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace Platformservice.SyncDataServices.Http
 {
-    public class CommandDataClient : ICommandDataClient
+    public class HttpCommandDataClient : ICommandDataClient
     {
         private readonly HttpClient _httpClient;
         private readonly IConfiguration _config;
 
-        public CommandDataClient(HttpClient httpClient, IConfiguration config)
+        public HttpCommandDataClient(HttpClient httpClient, IConfiguration config)
         {
             _httpClient = httpClient;
             _config = config;
@@ -29,12 +29,12 @@ namespace Platformservice.SyncDataServices.Http
                 "application/json"
                 );
 
-            var response = await _httpClient.PostAsync("http://localhost:6000/api/c/platforms/", httpContent);
+            var response = await _httpClient.PostAsync("http://localhost:6000/api/c/platformscommand/", httpContent);
 
             if (response.IsSuccessStatusCode)
-                Console.WriteLine("--->  Sync Post to comman service was okay");
+                Console.WriteLine("--->  Sync Post to command service was okay");
             else
-                Console.WriteLine("--->  Sync Post to comman service was not okay");
+                Console.WriteLine("--->  Sync Post to command service was not okay!");
         }
     }
 }

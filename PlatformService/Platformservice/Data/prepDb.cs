@@ -22,7 +22,6 @@ namespace Platformservice.Data
         {
             if (!context.Platforms.Any())
             {
-                Console.WriteLine("---> Seeding Data.....");
                 context.Platforms.AddRange(
                    new Platform() { Name="Dot Net", Publisher="Microsoft" , Cost="Free"},
                    new Platform() { Name = "SQL Server Express", Publisher = "Microsoft", Cost = "Free" },
