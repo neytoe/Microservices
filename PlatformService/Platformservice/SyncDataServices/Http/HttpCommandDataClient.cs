@@ -29,7 +29,7 @@ namespace Platformservice.SyncDataServices.Http
                 "application/json"
                 );
 
-            var response = await _httpClient.PostAsync("http://localhost:6000/api/c/platformscommand/", httpContent);
+            var response = await _httpClient.PostAsync($"{_config["CommandsService"]}", httpContent);
 
             if (response.IsSuccessStatusCode)
                 Console.WriteLine("--->  Sync Post to command service was okay");

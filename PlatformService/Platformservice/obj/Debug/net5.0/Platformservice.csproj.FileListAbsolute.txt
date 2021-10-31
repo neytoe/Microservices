@@ -62,3 +62,4 @@ C:\Users\hp\source\repos\Microservices\PlatformService\Platformservice\obj\Debug
 C:\Users\hp\source\repos\Microservices\PlatformService\Platformservice\obj\Debug\net5.0\ref\Platformservice.dll
 C:\Users\hp\source\repos\Microservices\PlatformService\Platformservice\obj\Debug\net5.0\Platformservice.pdb
 C:\Users\hp\source\repos\Microservices\PlatformService\Platformservice\obj\Debug\net5.0\Platformservice.genruntimeconfig.cache
+C:\Users\hp\source\repos\Microservices\PlatformService\Platformservice\bin\Debug\net5.0\appsettings.Production.json
