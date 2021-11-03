@@ -1,4 +1,4 @@
-apiVersion: networking.K8s.io/v1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-srv
@@ -10,7 +10,7 @@ spec:
     - host: acme.com
       http: 
        paths:
-        - path: /api/platforms
+        - path: /api/platforms/GetAllPlatforms
           pathType: Prefix
           backend: 
             service:
@@ -21,6 +21,6 @@ spec:
           pathType: Prefix
           backend:
             service:
-            name: commands-clusterip-srv
-            port:
-              number: 80
+              name: commands-clusterip-srv
+              port:
+                number: 80
