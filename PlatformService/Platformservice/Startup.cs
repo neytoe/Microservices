@@ -43,7 +43,7 @@ namespace Platformservice
             }
             else
             {
-               
+                Console.WriteLine("--> Using InMemory Database");
                 services.AddDbContext<AppDbContext>(opt =>
                     opt.UseInMemoryDatabase("InMem"));
             }
@@ -79,7 +79,7 @@ namespace Platformservice
             {
                 endpoints.MapControllers();
             });
-            prepDb.PrepPopulation(app);
+            prepDb.PrepPopulation(app, env.IsProduction());
         }
     }
 }
