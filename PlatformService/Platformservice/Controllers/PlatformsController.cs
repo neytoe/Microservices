@@ -30,7 +30,7 @@ namespace Platformservice.Controllers
             _commandDataClient = commandDataClient;
         }
 
-        [HttpGet("GetAllPlatforms")]
+        [HttpGet("GetAllPlatforms" )]
         public ActionResult<IEnumerable<PlatformReadDto>> GetPlatforms()
         {
             var platforms = _repository.GetAllPlatforms();
@@ -44,7 +44,7 @@ namespace Platformservice.Controllers
            
         }
 
-        [HttpGet("GetPlatformById")]
+        [HttpGet("GetPlatformById/{id}")]
         public ActionResult<PlatformReadDto> GetPlatformById (int id)
         {
             var platform = _repository.GetPlatformById(id);
