@@ -29,7 +29,6 @@ C:\Users\hp\source\repos\Microservices\CommandsService\obj\Debug\net5.0\Commands
 C:\Users\hp\source\repos\Microservices\CommandsService\obj\Debug\net5.0\CommandsService.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\hp\source\repos\Microservices\CommandsService\obj\Debug\net5.0\CommandsService.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\hp\source\repos\Microservices\CommandsService\obj\Debug\net5.0\staticwebassets\CommandsService.StaticWebAssets.Manifest.cache
-C:\Users\hp\source\repos\Microservices\CommandsService\obj\Debug\net5.0\staticwebassets\CommandsService.StaticWebAssets.xml
 C:\Users\hp\source\repos\Microservices\CommandsService\obj\Debug\net5.0\scopedcss\bundle\CommandsService.styles.css
 C:\Users\hp\source\repos\Microservices\CommandsService\obj\Debug\net5.0\CommandsService.RazorTargetAssemblyInfo.cache
 C:\Users\hp\source\repos\Microservices\CommandsService\obj\Debug\net5.0\CommandsService.csproj.CopyComplete
@@ -37,3 +36,4 @@ C:\Users\hp\source\repos\Microservices\CommandsService\obj\Debug\net5.0\Commands
 C:\Users\hp\source\repos\Microservices\CommandsService\obj\Debug\net5.0\ref\CommandsService.dll
 C:\Users\hp\source\repos\Microservices\CommandsService\obj\Debug\net5.0\CommandsService.pdb
 C:\Users\hp\source\repos\Microservices\CommandsService\obj\Debug\net5.0\CommandsService.genruntimeconfig.cache
+C:\Users\hp\source\repos\Microservices\CommandsService\bin\Debug\net5.0\CommandsService.StaticWebAssets.xml

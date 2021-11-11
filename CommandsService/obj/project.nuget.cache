@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p9iGr+1puQ6xT392ZqOL4tT4XwKhHt48jKicjtgzWEzTS1fHyiqBRdwceQ/uCNF0i7Y7hBXGCqczTUXVCwS3nQ==",
+  "dgSpecHash": "GppOuG01w7wTJADujeP8lb19K7wMKIoN0aJOGufIdOMMpgyZPAxtJ6ms+PusNSjodyLgANf9ay1yVVt/ita1NA==",
   "success": true,
   "projectFilePath": "C:\\Users\\hp\\source\\repos\\Microservices\\CommandsService\\CommandsService.csproj",
   "expectedPackageFiles": [
@@ -32,7 +32,8 @@
     "C:\\Users\\hp\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
-    "C:\\Users\\hp\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+    "C:\\Users\\hp\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
   ],
   "logs": []
 }

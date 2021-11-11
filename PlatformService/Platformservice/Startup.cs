@@ -40,7 +40,7 @@ namespace Platformservice
                 services.AddDbContext<AppDbContext>(opt =>
                     opt.UseSqlServer(Configuration.GetConnectionString("PlatformsConn"))
                 );
-            }
+        }
             else
             {
                 Console.WriteLine("--> Using InMemory Database");
@@ -48,7 +48,7 @@ namespace Platformservice
                     opt.UseInMemoryDatabase("InMem"));
             }
 
-            services.AddScoped<IPlatformRepo, PlatformRepo>();
+    services.AddScoped<IPlatformRepo, PlatformRepo>();
             services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
             services.AddControllers();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
