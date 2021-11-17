@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Platformservice.AsyncDataServices;
 using Platformservice.Data;
 using Platformservice.Interfaces;
 using Platformservice.Models;
@@ -48,7 +49,8 @@ namespace Platformservice
                     opt.UseInMemoryDatabase("InMem"));
             }
 
-    services.AddScoped<IPlatformRepo, PlatformRepo>();
+            services.AddScoped<IPlatformRepo, PlatformRepo>();
+            services.AddSingleton<IMessageBusClient, MessageBusClient>();
             services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
             services.AddControllers();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
