@@ -29,7 +29,7 @@ namespace CommandsService.EventProcessing
             switch (eventType)
             {
                 case EventType.PlatformPublished:
-                    //TODO
+                    addPlatform(message);
                     break;
                 default:
                     break;
@@ -44,7 +44,7 @@ namespace CommandsService.EventProcessing
 
             switch (eventType.Event)
             {
-                case "Platform_Published":
+                case "Platform Published":
                     Console.WriteLine("Platform Published Event Detected");
                     return EventType.PlatformPublished;
                 default:
@@ -63,8 +63,11 @@ namespace CommandsService.EventProcessing
                 try
                 {
                     var plat = _mapper.Map<Platform>(platformPublishedDto);
-                    if (!repo.ExternalPlatformExists(plat.ExternalId))
+                    if (!repo.ExternalPlatformExists(plat.ExternalId)){
                         repo.CreatePlatform(plat);
+                        repo.SaveChanges();
+                        Console.WriteLine("---> Platform added");
+                    }
                     else
                         Console.WriteLine($"Platform already exists!");
                 }

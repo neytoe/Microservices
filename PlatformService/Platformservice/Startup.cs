@@ -53,6 +53,7 @@ namespace Platformservice
             services.AddSingleton<IMessageBusClient, MessageBusClient>();
             services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
             services.AddControllers();
+
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddSwaggerGen(c =>
             {
