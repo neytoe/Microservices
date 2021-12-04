@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\CommandsService",
+    "\\PlatformService",
+    "\\PlatformService\\Platformservice",
+    "\\PlatformService\\Platformservice\\Controllers"
+  ],
+  "SelectedNode": "\\PlatformService\\PlatformService.sln",
+  "PreviewInSolutionExplorer": false
+}

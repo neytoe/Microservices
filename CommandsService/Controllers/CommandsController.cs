@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CommandsService.Controllers
 {
-    [Route("api/c/platforms/{platformId}/[controller]")]
+    [Route("api/c/platformscommand/{platformId}/[controller]")]
     [ApiController]
     public class CommandsController : ControllerBase
     {
