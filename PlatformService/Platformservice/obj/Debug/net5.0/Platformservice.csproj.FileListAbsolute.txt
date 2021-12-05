@@ -63,3 +63,10 @@ C:\Users\hp\source\repos\Microservices\PlatformService\Platformservice\obj\Debug
 C:\Users\hp\source\repos\Microservices\PlatformService\Platformservice\obj\Debug\net5.0\Platformservice.genruntimeconfig.cache
 C:\Users\hp\source\repos\Microservices\PlatformService\Platformservice\bin\Debug\net5.0\appsettings.Production.json
 C:\Users\hp\source\repos\Microservices\PlatformService\Platformservice\bin\Debug\net5.0\RabbitMQ.Client.dll
+C:\Users\hp\source\repos\Microservices\PlatformService\Platformservice\bin\Debug\net5.0\Google.Protobuf.dll
+C:\Users\hp\source\repos\Microservices\PlatformService\Platformservice\bin\Debug\net5.0\Grpc.AspNetCore.Server.dll
+C:\Users\hp\source\repos\Microservices\PlatformService\Platformservice\bin\Debug\net5.0\Grpc.AspNetCore.Server.ClientFactory.dll
+C:\Users\hp\source\repos\Microservices\PlatformService\Platformservice\bin\Debug\net5.0\Grpc.Core.Api.dll
+C:\Users\hp\source\repos\Microservices\PlatformService\Platformservice\bin\Debug\net5.0\Grpc.Net.Client.dll
+C:\Users\hp\source\repos\Microservices\PlatformService\Platformservice\bin\Debug\net5.0\Grpc.Net.ClientFactory.dll
+C:\Users\hp\source\repos\Microservices\PlatformService\Platformservice\bin\Debug\net5.0\Grpc.Net.Common.dll
